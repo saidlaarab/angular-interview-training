@@ -1,0 +1,36 @@
+<div>Price : {{price | currency:'EUR':'symbol':'3.1-2':'fr'}}</div>
+<div>Formatted price programmatically : {{formattedPrice}}</div>
+<hr>
+<div>Date  : {{'Le '}} {{myDate1 | date:'dd EEEE MMMM HH:mm':'UTC':'fr'}}</div>
+<div>Formatted date programmatically : {{formattedDate}}</div>
+<hr>
+<div>Number  : {{myNumber | number:'5.1-2':'fr'}}</div>
+<div>Formatted Number programmatically : {{formattedNumber}}</div>
+<hr>
+<div>Percent  : {{percent | percent:'2.0-1':'fr'}}</div>
+<div>Formatted percent programmatically : {{formattedPercent}}</div>
+<hr>
+<div>Lower-case string with pipe : {{str | lowercase}}</div>
+<div>Lower-case string programmatically  : {{lowercaseStr}}</div>
+<hr>
+<div>Upper-case string with pipe : {{str | uppercase}}</div>
+<div>Upper-case string programmatically  : {{uppercaseStr}}</div>
+<hr>
+<div>Title-case string with pipe : {{'said laarab' | titlecase}}</div>
+<hr>
+<div>I18n-Plural of 2 items with pipe : {{2 | i18nPlural:itemsMapping }}</div>
+<div>I18n-Plural of n(=9) items programmatically : {{pluralItemsStr }}</div>
+<hr>
+<div>Async and json pipes : {{personObj |  async | json}}</div>
+<hr>
+<div>Slice pipe with string : {{'Software' | slice:4:8}}</div>
+<div>Slice pipe with array : {{ ['python','java','php'] | slice:1 }}</div>
+<br><br>
+<h2>Order of precendence of pipe operator</h2>
+<!-- Order of precedence of the pipe operator -->
+<div>{{ 'Sotfware' + ' ' + 'Engineering' | uppercase }}</div>
+
+<div>{{ 'Sotfware'.length > 4 ? 'Is Software' : 'Hardaware' | uppercase }}</div> <!--pipe applied to just 'Hardware' -->
+<div>{{ 'Sotfware'.length < 4 ? 'Is Software' : 'Hardaware' | uppercase }}</div> <!--pipe applied to just 'Hardware' -->
+<!-- to address that issue, have to use parenthesis -->
+<div>{{ ('Sotfware'.length > 4 ? 'Is Software' : 'Hardaware') | uppercase }}</div>

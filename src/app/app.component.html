@@ -1,0 +1,26 @@
+<body>
+  <h1>{{ title }}</h1>
+  <br>
+  <h2>Temperature converter App</h2>
+  <input id="celsius" type="number" [ngModel]="celsius" (ngModelChange)="onCelsiusTyping($event)"/>
+  <br><br>
+  <input id="fernheit" type="number" [ngModel]="fernheit" (ngModelChange)="onFernheightTyping($event)"/>
+  <br><br>
+  <h2>Using NgModel</h2>
+  <template-driven-form></template-driven-form>
+  <h2>Using Pipes</h2>
+  <app-pipe-training></app-pipe-training>
+  <br><br>
+  <h2>Parsing and formatting</h2>
+  <app-parsing-training></app-parsing-training>
+  <br><br>
+  <h2>Applying Custom Directive</h2>
+  <app-directive-training></app-directive-training>
+  <br><br>
+  <h2>Deactiviting angular processing by ngNonBindable</h2>
+  <app-data-binding-training [myValue]="'Something'"></app-data-binding-training>
+  <br><br>
+  <hr>
+  <h2>Routing </h2>
+  <app-routing-training></app-routing-training>
+</body>

@@ -1,0 +1,7 @@
+<div ngNonBindable >The following sum will not be resolved : {{ 1 + 2}}</div>
+<div ngNonBindable (mouseenter)="onMouseEnter()"> <!-- NOTE : the event binding works here !!! -->
+    <div>All the below element will not be processed, as the parent element has the attribute-directive ngNonBindable</div>
+    <div >** The following sum will not be resolved : {{ 5 + 2}}</div>
+    <div >** The injected value wil not be processed : {{ myValue }}</div>
+    <input value='placeholder' />
+</div>

@@ -1,0 +1,11 @@
+<div>Hello Template Driven Component</div>
+<!-- NgModel: Tow-way binding -->
+<label for="color">Color : </label><input id="color" [(ngModel)]='color' [disabled]="false"/>
+<br>
+<!-- NgModel: Separate the data binding from the event binding -->
+<label for="name">Name: </label><input id="name" [ngModel]='name' (ngModelChange)="onNameChange($event)"/>
+<ng-template #title>
+    <h3>Hi</h3>
+</ng-template>
+<div *ngIf="color ==''; else title">Conditional Div</div>
+<div>{{ color }}</div>
