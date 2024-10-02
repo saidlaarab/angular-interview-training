@@ -5,20 +5,25 @@ import { NotFoundComponent } from './components/routing-training/not-found/not-f
 import { AppComponent } from './app.component';
 import { FirstChildComponent } from './components/routing-training/first-destination/first-child/first-child.component';
 import { SecondChildComponent } from './components/routing-training/first-destination/second-child/second-child.component';
+import { AuthGuard } from './auth-guards/auth.guard';
+import { DeniedAccessComponent } from './components/routing-training/denied-access/denied-access.component';
 
 export const routes: Routes = [
     {
         path:'first/:id', 
         component: FirstDestinationComponent,
-         children: [
+        pathMatch: 'full',
+        canActivate: [AuthGuard],
+        children: [
              {path: 'child-a', component: FirstChildComponent},
              {path: 'child-b', component: SecondChildComponent}
         ]
     },
-     {path:'second/:id', component: SecondDestinationComponent},
+    {path:'second/:id', component: SecondDestinationComponent},
     // {path: 'aaa', redirectTo: '/first/1', pathMatch: 'prefix'}, // if 'path' is like '/aaa/**',
      //{path: '', redirectTo: '/first/5', pathMatch: 'full'}, // if 'path' === '/',
     // {path: '', redirectTo: '/first/3', pathMatch: 'prefix'}, // if 'path' is like '/**',
     // {path: 'bbb', redirectTo: '/second/2', pathMatch: 'full'}, // if 'path' === '/bbb' or '/bbb/'
+    {path: 'denied-access', component: DeniedAccessComponent},
     {path: '**', component: NotFoundComponent},
 ];

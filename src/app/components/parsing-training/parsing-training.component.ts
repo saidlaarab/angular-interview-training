@@ -12,12 +12,12 @@ export class ParsingTrainingComponent {
   formattedDate: string;
   constructor(){
     // Parsing numbers
-    this.number =  parseFloat("12.99");
-    this.number =  parseInt("12.99");
+    this.number =  parseFloat("12.99"); // --> 12.99
+    this.number =  parseInt("12.99"); // --> 12
 
     // Parsing dates
     // Formatting dates using Intl.DateTimeFormat
-    const formatter = Intl.DateTimeFormat('en-US',{
+    const formatter = Intl.DateTimeFormat('en',{
       weekday: 'long', // for displaying day (long --> whole name)
       day: 'numeric',
       month: 'long', // for month name (long --> whole name)

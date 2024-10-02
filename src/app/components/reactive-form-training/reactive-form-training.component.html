@@ -1,0 +1,12 @@
+<form [formGroup]="myForm">
+    <label for="first">1st field</label>
+    <input id="first" formControlName="firstField"/>
+    <br>
+    <label for="second">2nd field</label>
+    <input id="second" formControlName="secondField" />
+    <br>
+    <label for="third">2nd field</label>
+    <input id="third" formControlName="thirdField"/>
+    <br>
+    <button type="submit" [disabled]="myForm.invalid">Submit</button>
+</form>

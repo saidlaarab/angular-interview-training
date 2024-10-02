@@ -11,13 +11,13 @@ import { HighlightDirective } from './components/directive-training/directives/h
 import { DirectiveTrainingComponent } from './components/directive-training/directive-training.component';
 import { DataBindingTrainingComponent } from './components/data-binding-training/data-binding-training.component';
 import { RoutingTrainingComponent } from './components/routing-training/routing-training.component';
+import { ReactiveFormTrainingComponent } from "./components/reactive-form-training/reactive-form-training.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, FormsModule, CustomCurrencyPipe, TemplateDrivenForm, PipeTrainingComponent, ParsingTrainingComponent, DirectiveTrainingComponent, DataBindingTrainingComponent,
-    RoutingTrainingComponent, RouterLink, RouterLinkActive, RouterOutlet
-  ],
+    RoutingTrainingComponent, RouterLink, RouterLinkActive, RouterOutlet, ReactiveFormTrainingComponent],
   providers: [DecimalPipe, {provide: LOCALE_ID, useValue: 'fr'}],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

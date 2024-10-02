@@ -33,7 +33,7 @@ export class PipeTrainingComponent {
     '=0': 'No items',
     '=1': 'One item',
     '=2': 'Two items',
-    'other': '# items'
+    'other': '# items' // the # symbol with be replaced with the specified number
   };
   pluralItemsStr!: string;
 
